@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Darío Di Totaro · Ingeniero informático</title>
+<meta name="description" content="Darío Di Totaro, ingeniero informático en Málaga. Datos, IA y gestión de proyectos. Disponible para prácticas a jornada completa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<a class="skip" href="#proyectos">Ir a los proyectos</a>
+
+<!-- El pase de paddock -->
+<header class="hero" id="inicio">
+  <img class="hero__photo" src="assets/ferrari-312b-donington.jpg" width="1920" height="1428"
+       alt="Un Ferrari 312B de Fórmula 1 de 1970, rojo con el número 4, expuesto en un museo">
+  <div class="pass" data-hero>
+    <h1 class="pass__name"><span>Darío</span> <span>Di Totaro</span></h1>
+    <div class="pass__body">
+      <p class="pass__facts">Ingeniero informático<br>Datos, IA y proyectos<br>Málaga · Disponible ya</p>
+      <p class="pass__lead">Graduado en Ingeniería Informática por la Universidad de Málaga y estudiante del Máster en Gestión de Proyectos de UNIR. Busco prácticas a jornada completa.</p>
+    </div>
+    <div class="pass__band">
+      <a class="link" href="mailto:hgdario1017@gmail.com">hgdario1017@gmail.com</a>
+      <a class="button button--ink" href="assets/cv-dario-di-totaro.pdf" download>Descargar CV</a>
+      <a class="link" href="https://github.com/hgdario">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<!-- El talón: se queda abajo a la izquierda cuando el pase se va -->
+<aside class="stub" aria-label="Contacto rápido" data-stub>
+  <strong>Darío Di Totaro</strong>
+  <a href="mailto:hgdario1017@gmail.com">Escríbeme</a>
+  <a href="assets/cv-dario-di-totaro.pdf" download>CV</a>
+</aside>
+
+<main>
+
+<section class="intro" aria-labelledby="intro-t">
+  <div class="intro__top" data-reveal>
+    <h2 id="intro-t" class="intro__title">Del dato a la pantalla</h2>
+    <p class="intro__note">Me gusta hacer la herramienta entera: sacar los datos, limpiarlos, modelarlos y dejarlos en una pantalla que entienda alguien que no programa.</p>
+  </div>
+  <dl class="facts" data-reveal>
+    <div><dt>2026</dt><dd>Grado en Ingeniería Informática, Sistemas de Información. UMA</dd></div>
+    <div><dt>2027</dt><dd>Máster en Gestión de Proyectos, en curso. UNIR</dd></div>
+    <div><dt>B2</dt><dd>Inglés profesional, español nativo</dd></div>
+    <div><dt>Hoy</dt><dd>Disponible a jornada completa, con carnet B y coche</dd></div>
+  </dl>
+</section>
+
+<section class="work" id="proyectos" aria-labelledby="work-t">
+  <div class="work__head" data-reveal>
+    <h2 id="work-t">Cuatro proyectos</h2>
+    <p>Del más reciente al primero. El primero es mi Trabajo de Fin de Grado, y lo puedes tocar.</p>
+  </div>
+
+  <div class="folders">
+
+    <article class="folder folder--ink" style="--i:0" aria-labelledby="p1">
+      <div class="folder__strip">
+        <h3 class="folder__tab" id="p1">Telemetría F1</h3>
+        <p class="folder__cat">TFG · 2026 · Python, Streamlit, FastF1, scikit-learn</p>
+      </div>
+      <div class="folder__body">
+        <figure class="lab" data-lab aria-label="Clasificación de 25 circuitos de Fórmula 1 con K-Means">
+          <div class="lab__plot" data-plot></div>
+          <div class="lab__readout" data-readout aria-live="polite">
+            <p class="lab__name" data-r-name>Mónaco</p>
+            <p class="lab__family" data-r-family>Urbano extremo</p>
+            <p class="lab__nums" data-r-nums>1,20 g lateral · 12,0 cambios de marcha por km · 3,28 km</p>
+          </div>
+          <div class="families" data-families>
+            <button type="button" class="family" data-k="0" aria-pressed="false"><span class="family__name">Low Drag</span><span class="family__what">Rectas largas, pocas curvas. Monza, Las Vegas.</span></button>
+            <button type="button" class="family" data-k="1" aria-pressed="false"><span class="family__name">Stop-and-Go</span><span class="family__what">Frenar fuerte y salir acelerando. Canadá, Bakú, Singapur.</span></button>
+            <button type="button" class="family" data-k="2" aria-pressed="false"><span class="family__name">Aero Efficiency</span><span class="family__what">Curvas rápidas enlazadas. Silverstone, Suzuka, Spa.</span></button>
+            <button type="button" class="family" data-k="3" aria-pressed="false"><span class="family__name">Balanced Chassis</span><span class="family__what">Un poco de todo. Hungría, Barcelona, Zandvoort.</span></button>
+            <button type="button" class="family" data-k="4" aria-pressed="false"><span class="family__name">Urbano extremo</span><span class="family__what">Mónaco va solo: nadie cambia tanto de marcha.</span></button>
+          </div>
+          <figcaption class="lab__cap">Los 25 circuitos de mi TFG, agrupados por K-Means según lo rápidas que son sus curvas y cuántas veces se cambia de marcha por kilómetro. Toca un circuito o una familia.</figcaption>
+        </figure>
+        <div class="folder__text">
+          <p>Una aplicación web que convierte la telemetría real de la Fórmula 1 en paneles que entiende alguien que no es ingeniero de pista.</p>
+          <p><b>Qué hice.</b> Trazas de velocidad y marchas, comparativas entre pilotos, vuelta óptima, coche fantasma, diagrama G-G y carga de neumáticos, con suavizado y filtrado de la señal antes de pintar nada.</p>
+          <p><b>Qué salió.</b> Un K-Means agrupa 25 circuitos en 5 familias y 25 pilotos en 4 estilos de conducción. Validado con leave-one-out: 96&nbsp;% de acierto en circuitos. Tests con pytest.</p>
+          <p><b>Cómo lo llevé.</b> Solo, de principio a fin: requisitos, iteraciones cortas, Git y memoria técnica.</p>
+          <a class="link" href="https://github.com/hgdario/f1-telemetry-dss">Ver el repositorio en GitHub</a>
+        </div>
+        <div class="shots" data-reveal>
+          <figure>
+            <img src="assets/tfg-hub.jpg" width="1729" height="915" loading="lazy"
+                 alt="El hub de sesión de la aplicación: podio, vuelta rápida y clasificación del Gran Premio de China 2024">
+            <figcaption>El hub de sesión: podio, vuelta rápida y clasificación de China 2024.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/tfg-mapacalor.jpg" width="1300" height="857" loading="lazy"
+                 alt="Mapa de calor de velocidad sobre el trazado de Albert Park, con velocidad máxima, mínima y media">
+            <figcaption>Mapa de calor de velocidad: la mejor vuelta de Sainz en Australia.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/tfg-panelequipo.jpg" width="1028" height="892" loading="lazy"
+                 alt="Comparativa de los dos pilotos de Aston Martin en Barcelona, con la vuelta reproducida sobre el circuito">
+            <figcaption>Compañeros de equipo, vuelta a vuelta, reproducidos sobre el circuito.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="folder folder--surface" style="--i:1" aria-labelledby="p2">
+      <div class="folder__strip">
+        <h3 class="folder__tab" id="p2">F1 Manager</h3>
+        <p class="folder__cat">Proyecto personal · 2026 · Python, SQLite, SQL, Power BI</p>
+      </div>
+      <div class="folder__body">
+        <figure class="folder__pic pipe" aria-label="El pipeline del proyecto, de la partida guardada a Power BI">
+          <ol class="pipe__steps">
+            <li><span class="pipe__name">Partida .sav</span><span class="pipe__num">4,6 MB</span><span class="pipe__what">Binario del juego, comprimido con zlib</span></li>
+            <li><span class="pipe__name">main.db</span><span class="pipe__num">292 tablas</span><span class="pipe__what">74.826 filas en SQLite, documentadas una a una</span></li>
+            <li><span class="pipe__name">Estrella</span><span class="pipe__num">2 + 5</span><span class="pipe__what">Hechos de resultados y de cuentas, cinco dimensiones</span></li>
+            <li><span class="pipe__name">Power BI</span><span class="pipe__num">ODBC</span><span class="pipe__what">Gasto frente a puntos, por equipo y temporada</span></li>
+          </ol>
+          <figcaption>El pipeline, con las cifras de una partida real de F1 Manager 2023.</figcaption>
+        </figure>
+        <div class="folder__text">
+          <p>La pregunta: ¿el dinero que gasta un equipo de F1 se convierte en resultados? La respuesta está en la partida guardada de F1 Manager, en un formato binario sin documentación oficial.</p>
+          <p><b>Qué hice.</b> Un extractor en Python que localiza la firma del archivo, descomprime el bloque zlib y separa las tres bases de datos SQLite que lleva dentro, en solo lectura y comprobando la cabecera. Después, un diccionario de datos automático de las 292 tablas.</p>
+          <p><b>Qué salió.</b> Un modelo en estrella en vistas SQL que cruza los resultados de carrera con el libro de cuentas por equipo y temporada, listo para Power BI. Las conversiones de tipo esquivan un error del conector ODBC que bloqueaba la importación.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="folder folder--ink" style="--i:2" aria-labelledby="p3">
+      <div class="folder__strip">
+        <h3 class="folder__tab" id="p3">Jarvis</h3>
+        <p class="folder__cat">Proyecto personal · 2026 · Python, FastAPI, llama.cpp, SQLite</p>
+      </div>
+      <div class="folder__body">
+        <figure class="folder__pic">
+          <img class="is-ui" src="assets/jarvis-chat.png" width="1000" height="625" loading="lazy"
+               alt="Una conversación con Jarvis: crea un recordatorio, da el tiempo del sábado en Málaga y hace una cuenta">
+          <figcaption>La interfaz de Jarvis, con Qwen3 corriendo en la gráfica de casa.</figcaption>
+        </figure>
+        <div class="folder__text">
+          <p>Un asistente de escritorio que funciona entero en mi ordenador: sin nube, sin cuentas, sin mandar nada fuera.</p>
+          <p><b>Qué hice.</b> Modelo Qwen3 en llama.cpp detrás de un servicio FastAPI con SQLite. Recordatorios en lenguaje natural con aviso por voz, memoria en notas Markdown, el tiempo, búsqueda web con fuentes y un resumen al encender el equipo.</p>
+          <p><b>Qué salió.</b> Las acciones del modelo se validan por código, así que no puede confirmar una tarea que no ha hecho. Ajustado a una gráfica de consumo, repartiendo el modelo entre VRAM y RAM y con caché del prompt.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="folder folder--surface" style="--i:3" aria-labelledby="p4">
+      <div class="folder__strip">
+        <h3 class="folder__tab" id="p4">Póker</h3>
+        <p class="folder__cat">Proyecto académico · 2023 · Machine Learning</p>
+      </div>
+      <div class="folder__body">
+        <figure class="folder__pic">
+          <img src="assets/soldiers-playing-cards-and-dice-the-cheats.jpg" width="1920" height="1422" loading="lazy"
+               alt="Pintura barroca de soldados jugando a las cartas y a los dados alrededor de una mesa">
+          <figcaption>Valentin de Boulogne, «Los tramposos», hacia 1618.</figcaption>
+        </figure>
+        <div class="folder__text">
+          <p>Mi primer proyecto de aprendizaje automático: reconocer la mano de póker a partir de cinco cartas.</p>
+          <p><b>Qué hice.</b> Preparé un dataset estructurado de combinaciones de cartas y entrené y comparé varios algoritmos de clasificación.</p>
+          <p><b>Qué salió.</b> Un clasificador que nombra la mano introducida, y la costumbre de comparar modelos antes de quedarme con uno.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="sheet-wrap" id="habilidades" aria-labelledby="skills-t">
+  <div class="sheet" data-reveal>
+    <h2 id="skills-t">Habilidades</h2>
+    <p class="sheet__note">Clasificadas como una hoja de tiempos: cada una, con el proyecto donde la he usado.</p>
+
+    <div class="group">
+      <h3>Lenguajes</h3>
+      <ul>
+        <li><span>Python, nivel avanzado</span><span>TFG, Jarvis, F1 Manager</span></li>
+        <li><span>SQL</span><span>F1 Manager, Jarvis, Grado</span></li>
+        <li><span>Java y C++</span><span>Grado</span></li>
+        <li><span>R y MATLAB</span><span>Grado</span></li>
+        <li><span>Haskell</span><span>Grado</span></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Datos e IA</h3>
+      <ul>
+        <li><span>Pandas y NumPy</span><span>TFG, F1 Manager</span></li>
+        <li><span>scikit-learn, K-Means</span><span>TFG, Póker</span></li>
+        <li><span>Suavizado y filtrado de señal</span><span>TFG</span></li>
+        <li><span>Modelos de lenguaje en local</span><span>Jarvis</span></li>
+        <li><span>Power BI</span><span>F1 Manager</span></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Producto</h3>
+      <ul>
+        <li><span>Streamlit</span><span>TFG</span></li>
+        <li><span>FastAPI y SQLite</span><span>Jarvis</span></li>
+        <li><span>Tests con pytest</span><span>TFG, Jarvis</span></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Gestión</h3>
+      <ul>
+        <li><span>Requisitos y planificación iterativa</span><span>TFG</span></li>
+        <li><span>Git y GitHub</span><span>TFG, Jarvis</span></li>
+        <li><span>Documentación técnica</span><span>TFG</span></li>
+        <li><span>Gestión de proyectos</span><span>Máster, UNIR</span></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Idiomas</h3>
+      <ul>
+        <li><span>Español</span><span>Nativo</span></li>
+        <li><span>Inglés</span><span>B2 profesional</span></li>
+        <li><span>Francés</span><span>Básico</span></li>
+      </ul>
+    </div>
+    <p class="sheet__end">Disponible a jornada completa, desde hoy.<br>Presencial, en remoto o con desplazamiento.</p>
+  </div>
+</section>
+
+<section class="letter-wrap" aria-labelledby="letter-t">
+  <article class="letter" data-reveal>
+    <h2 id="letter-t">Por qué tanta F1</h2>
+    <p>La Fórmula 1 es el mejor campo de pruebas de datos que conozco. Cada coche manda cientos de señales por segundo y los equipos deciden con ellas en minutos.</p>
+    <p>Por eso mi TFG va de telemetría: ahí aprendí a limpiar señales, a agrupar datos sin etiquetas y a explicar el resultado a quien no programa.</p>
+    <p>Pero no todo es F1. Jarvis va de IA en local y de no fiarse a ciegas de un modelo; el clasificador de póker fue mi primera vez con aprendizaje automático.</p>
+    <p>Estudio Gestión de Proyectos porque lo que más disfruté del TFG fue llevarlo: decidir qué entraba, en qué orden y cuándo estaba terminado.</p>
+    <p>Busco unas prácticas donde aprender de un equipo <mark>y aportar desde el primer día</mark>.</p>
+    <p class="letter__sign">Darío</p>
+    <p class="letter__role">Ingeniero informático, Málaga</p>
+  </article>
+  <div class="tear" data-reveal>
+    <a class="tear__mail" href="mailto:hgdario1017@gmail.com">hgdario1017@gmail.com</a>
+    <a class="button button--ink" href="mailto:hgdario1017@gmail.com?subject=Pr%C3%A1cticas">Escribir</a>
+  </div>
+</section>
+
+<section class="contact" id="contacto" aria-labelledby="contact-t">
+  <img class="contact__photo" src="assets/malaga-2023.jpg" width="1920" height="1440" decoding="async"
+       alt="Vista de Málaga desde Gibralfaro: la plaza de toros, el parque, el puerto y el mar">
+  <div class="card" data-reveal>
+    <h2 id="contact-t">Hablemos</h2>
+    <p>Málaga, España</p>
+    <dl class="card__rows">
+      <div><dt>Presencial</dt><dd>Málaga y provincia</dd></div>
+      <div><dt>En remoto</dt><dd>Sí</dd></div>
+      <div><dt>Desplazamiento</dt><dd>Sí, carnet B</dd></div>
+    </dl>
+    <p><a class="link" href="mailto:hgdario1017@gmail.com">hgdario1017@gmail.com</a></p>
+    <a class="button button--accent card__cta" href="mailto:hgdario1017@gmail.com?subject=Pr%C3%A1cticas">Escribir un correo</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="back">
+  <div class="postcard" data-reveal>
+    <div class="postcard__msg">
+      <h2>Gracias por leer</h2>
+      <p>Si tienes unas prácticas en datos, IA o gestión de proyectos, me encantará saber de ellas.</p>
+      <p>El CV en PDF tiene todo lo de esta página en dos hojas.</p>
+    </div>
+    <div class="postcard__addr">
+      <img class="stamp" src="assets/spain-andalusia-malaga-bw-2015-10-24.jpg" width="1920" height="1587" loading="lazy"
+           alt="Arco nazarí de la Alcazaba de Málaga">
+      <ul>
+        <li><a href="mailto:hgdario1017@gmail.com">hgdario1017@gmail.com</a></li>
+        <li><a href="https://github.com/hgdario">github.com/hgdario</a></li>
+        <li><a href="assets/cv-dario-di-totaro.pdf" download>Currículum en PDF</a></li>
+        <li>Málaga, España</li>
+      </ul>
+    </div>
+    <p class="imprint">© 2026 Darío Alessandro Di Totaro Ruíz. Hecho a mano en Málaga.</p>
+  </div>
+  <p class="bigname" aria-hidden="true">Di Totaro</p>
+  <p class="credits">Fotografías: <a href="https://commons.wikimedia.org/wiki/File:Ferrari_312B_Donington.jpg">«Ferrari 312B Donington»</a> de John Chapman (Pyrope), <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Valentin_de_Boulogne_-_Soldiers_Playing_Cards_and_Dice_(The_Cheats).jpg">«Los tramposos»</a> de Valentin de Boulogne, dominio público; <a href="https://commons.wikimedia.org/wiki/File:Malaga_2023.jpg">«Malaga 2023»</a> de Viktar Palstsiuk, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Spain_Andalusia_Malaga_BW_2015-10-24_15-25-16.jpg">Alcazaba de Málaga</a> de Berthold Werner, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>. Todas vía Wikimedia Commons.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
