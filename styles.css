@@ -341,7 +341,7 @@ b { font-weight: 600; }
   background: var(--bg);
   text-align: center;
 }
-.sheet::before, .sheet::after, .letter::after, .postcard::before {
+.sheet::before, .sheet::after {
   content: ""; position: absolute; left: 0; right: 0; height: 14px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Ccircle cx='14' cy='14' r='14' fill='%23e8e8e3'/%3E%3C/svg%3E") 0 0 / 28px 14px repeat-x;
 }
@@ -356,38 +356,8 @@ b { font-weight: 600; }
 .group li span:last-child { text-align: right; color: var(--muted); font-size: var(--step-small); white-space: nowrap; }
 .sheet__end { margin-top: 64px; font-style: italic; }
 
-/* ---------- la carta ---------- */
-.letter-wrap {
-  padding: calc(var(--gap) * 0.5) var(--gutter) calc(var(--gap) * 0.6);
-  display: grid; justify-items: center;
-}
-.letter {
-  position: relative;
-  width: min(100%, 680px);
-  padding: 64px clamp(24px, 6vw, 64px) 56px;
-  background: var(--surface);
-}
-.letter::after {
-  bottom: -14px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Ccircle cx='14' cy='0' r='14' fill='%23d6d6cf'/%3E%3C/svg%3E");
-}
-.letter h2 { font-size: var(--step-head); margin-bottom: 32px; }
-.letter p + p { margin-top: 1em; }
-.letter mark { background: var(--accent); color: var(--accent-ink); padding: 0 0.15em; }
-.letter__sign { margin-top: 2em !important; font-style: italic; font-size: var(--step-lead); }
-.letter__role { margin-top: 2px !important; font-size: var(--step-small); color: var(--muted); }
-.tear {
-  width: min(100%, 680px);
-  margin-top: 30px;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  padding: 20px clamp(24px, 6vw, 64px);
-  background: var(--surface);
-  border-top: 6px dotted var(--bg);
-}
-.tear__mail { font-size: var(--step-lead); text-decoration: none; overflow-wrap: anywhere; }
-
 /* ---------- contacto: tarjeta sobre la ciudad ---------- */
-.contact { position: relative; min-height: 100svh; overflow: clip; }
+.contact { position: relative; display: flow-root; min-height: 100svh; overflow: clip; }
 .contact__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 92%; }
 .card {
   position: relative;
@@ -404,37 +374,13 @@ b { font-weight: 600; }
 .card__rows dd { text-align: right; }
 .card__cta { margin: 14px -32px 0; min-height: 56px; }
 
-/* ---------- pie: el reverso de la postal ---------- */
+/* ---------- pie ---------- */
 .back {
   background: var(--field); color: var(--field-ink);
   padding: calc(var(--gap) * 0.7) var(--gutter) 40px;
   overflow: clip;
 }
-.postcard {
-  position: relative;
-  width: min(100%, 1180px);
-  margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 48px clamp(32px, 6vw, 96px);
-  padding: 64px clamp(24px, 5vw, 64px) 32px;
-  background: var(--bg); color: var(--ink);
-}
-.postcard::before { top: -14px; background-size: 56px 14px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='14'%3E%3Ccircle cx='28' cy='28' r='28' fill='%23e8e8e3'/%3E%3C/svg%3E"); }
-.postcard__msg h2 { font-size: var(--step-head); margin-bottom: 24px; }
-.postcard__msg p + p { margin-top: 0.8em; }
-.postcard__addr { position: relative; padding-top: 140px; }
-.stamp {
-  position: absolute; top: 0; right: 0;
-  width: 92px; aspect-ratio: 3 / 4; object-fit: cover;
-  padding: 6px; background: var(--surface);
-  transform: rotate(3deg);
-  transition: transform 300ms var(--ease-out);
-}
-@media (hover: hover) and (pointer: fine) {
-  .postcard:hover .stamp { transform: rotate(-2deg) scale(1.04); }
-}
-.postcard__addr ul { display: grid; gap: 12px; }
-.postcard__addr a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
-.imprint { grid-column: 1 / -1; text-align: center; font-size: var(--step-small); color: var(--muted); }
+.imprint { margin-bottom: 12px; font-size: var(--step-small); color: var(--field-muted); }
 .bigname {
   font: 800 17vw/0.8 var(--display);
   text-transform: uppercase; letter-spacing: -0.02em;
@@ -451,7 +397,7 @@ b { font-weight: 600; }
   transition: opacity 600ms var(--ease-out), transform 800ms var(--ease-out);
   transition-delay: calc(var(--n, 0) * 70ms);
 }
-.js .card[data-reveal] > *, .js .tear[data-reveal] > * { transform: translateY(16px); }
+.js .card[data-reveal] > * { transform: translateY(16px); }
 
 /* ---------- tablet ---------- */
 @media (max-width: 1100px) {
@@ -474,7 +420,8 @@ b { font-weight: 600; }
   .pass__band { grid-template-columns: 1fr 1fr; margin: 0 -20px; padding: 16px 20px; row-gap: 14px; }
   .pass__band .button { grid-column: 1 / -1; grid-row: 1; width: 100%; }
 
-  .stub { left: 12px; right: 12px; bottom: 12px; justify-content: space-between; }
+  .stub { right: 12px; bottom: 12px; gap: 16px; padding: 12px 14px 12px 16px; }
+  .stub strong { display: none; }
 
   .intro__top, .work__head { display: block; }
   .intro__title, .work__head h2 { font-size: 13vw; }
@@ -500,20 +447,12 @@ b { font-weight: 600; }
   .sheet-wrap { padding: var(--gap) 10px; }
   .sheet { padding: 56px 24px; }
 
-  .letter-wrap { padding-left: 0; padding-right: 0; }
-  .tear { flex-direction: column; align-items: stretch; text-align: center; }
-  .tear .button { width: 100%; }
 
   .contact { min-height: 0; padding-top: 70svh; }
   .contact__photo { height: 70svh; }
   .card { position: relative; top: auto; margin: -80px 16px 0; width: auto; }
   .card__cta { margin: 14px -32px 0; }
 
-  .postcard { grid-template-columns: 1fr; padding: 56px 24px 28px; gap: 40px; }
-  .postcard::before { background-size: calc(100% / 6) 14px; }
-  .postcard__addr { position: static; padding-top: 0; }
-  .postcard__msg { padding-right: 84px; }
-  .stamp { top: 40px; right: 20px; width: 68px; }
 }
 
 /* ---------- movimiento reducido ---------- */
