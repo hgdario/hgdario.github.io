@@ -118,20 +118,25 @@
         <p class="folder__cat">Proyecto personal · 2026 · Python, SQLite, SQL, Power BI</p>
       </div>
       <div class="folder__body">
-        <figure class="folder__pic pipe" aria-label="El pipeline del proyecto, de la partida guardada a Power BI">
+        <figure class="folder__pic">
+          <img class="is-report" src="assets/f1manager-powerbi.png" width="1060" height="742" loading="lazy"
+               alt="Página de resumen del dashboard de Power BI: tabla de puntos y gasto en I+D por equipo, dispersión gasto frente a puntos y puntos por millón">
+          <figcaption>La página de resumen del dashboard, temporada 2024 de la partida.</figcaption>
+        </figure>
+        <div class="folder__text">
+          <p>La pregunta: ¿el dinero que gasta un equipo de F1 se convierte en resultados? La respuesta está en la partida guardada de F1 Manager, en un formato binario sin documentación oficial.</p>
+          <p><b>Qué hice.</b> Un extractor en Python que localiza la firma del archivo, descomprime el bloque zlib y separa las tres bases de datos SQLite que lleva dentro, en solo lectura. Encima, un diccionario de datos automático de 292 tablas y un modelo en estrella en vistas SQL.</p>
+          <p><b>Qué salió.</b> Un dashboard de Power BI en cuatro páginas: resumen, value for money, finanzas y resultados. En 2024, a Alpine cada punto le cuesta 207.295&nbsp;€ de I+D; a McLaren, 30,8 millones.</p>
+        </div>
+        <figure class="pipe" aria-label="El pipeline del proyecto, de la partida guardada a Power BI">
           <ol class="pipe__steps">
             <li><span class="pipe__name">Partida .sav</span><span class="pipe__num">4,6 MB</span><span class="pipe__what">Binario del juego, comprimido con zlib</span></li>
             <li><span class="pipe__name">main.db</span><span class="pipe__num">292 tablas</span><span class="pipe__what">74.826 filas en SQLite, documentadas una a una</span></li>
             <li><span class="pipe__name">Estrella</span><span class="pipe__num">2 + 5</span><span class="pipe__what">Hechos de resultados y de cuentas, cinco dimensiones</span></li>
-            <li><span class="pipe__name">Power BI</span><span class="pipe__num">ODBC</span><span class="pipe__what">Gasto frente a puntos, por equipo y temporada</span></li>
+            <li><span class="pipe__name">Power BI</span><span class="pipe__num">4 páginas</span><span class="pipe__what">Gasto frente a puntos, por equipo y temporada</span></li>
           </ol>
-          <figcaption>El pipeline, con las cifras de una partida real de F1 Manager 2023.</figcaption>
+          <figcaption>El pipeline, de la partida guardada al dashboard.</figcaption>
         </figure>
-        <div class="folder__text">
-          <p>La pregunta: ¿el dinero que gasta un equipo de F1 se convierte en resultados? La respuesta está en la partida guardada de F1 Manager, en un formato binario sin documentación oficial.</p>
-          <p><b>Qué hice.</b> Un extractor en Python que localiza la firma del archivo, descomprime el bloque zlib y separa las tres bases de datos SQLite que lleva dentro, en solo lectura y comprobando la cabecera. Después, un diccionario de datos automático de las 292 tablas.</p>
-          <p><b>Qué salió.</b> Un modelo en estrella en vistas SQL que cruza los resultados de carrera con el libro de cuentas por equipo y temporada, listo para Power BI. Las conversiones de tipo esquivan un error del conector ODBC que bloqueaba la importación.</p>
-        </div>
       </div>
     </article>
 
